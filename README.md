@@ -8,6 +8,7 @@
 3) Комментирование оставленных отзывов.
 
 Проект разработан командой из трех человек с использованием Git в рамках учебного курса Яндекс.Практикум.
+
 ## Стек технологий
 
 Python 3.9
@@ -15,6 +16,39 @@ Django 2.2.16
 Django REST Framework 3.12.4
 Django REST Framework simplejwt 5.1.0
 
+### Запуск приложения в контейнерах:
+
+Установить docker и docker-compose
+
+Запустить docker-compose из папки /infra_sp2/infra/ командой:
+
+```
+docker-compose up
+```
+
+Выполнить миграции командой:
+
+```
+docker-compose exec web python manage.py migrate
+```
+
+Загрузить статику командой:
+
+```
+docker-compose exec web python manage.py collectstatic --no-input
+```
+
+Загрузить фикстуры из файла fixtures.json:
+
+```
+docker-compose exec web python manage.py loaddata fixtures.json
+```
+
+Чтобы остановить контейнеры, воспользуйтесь командой:
+
+```
+docker-compose down -v
+```
 
 ## Статус workflow
 [![workflow](https://github.com/anxeity/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master)](https://github.com/anxeity/yamdb_final/actions/workflows/yamdb_workflow.yml)
