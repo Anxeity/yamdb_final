@@ -16,6 +16,9 @@ Django 2.2.16
 Django REST Framework 3.12.4
 Django REST Framework simplejwt 5.1.0
 
+### Шаблон наполнения .env файла
+DB_ENGINE=django.db.backends.postgresql Укажите используемую базу данных DB_NAME=postgres Укажите имя созданной базы данных POSTGRES_USER=postgres Укажите имя пользователя POSTGRES_PASSWORD=postgres Укажите пароль для подключения к базе данных DB_HOST=db Укажите название сервиса (контейнера) DB_PORT=5432 Укажите порт для поключения к базе
+
 ### Запуск приложения в контейнерах:
 
 Установить docker и docker-compose
